@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SIV_Pokemons_LL</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/assets/css/styles.css" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+<body>
+    <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SIV_Pokemons_LL</a>*@
+            <button class="navbar-toggler" type="button"
+                    data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Pokedex" asp-action="Index">Pokedex</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>-->
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bx-body nav__icon'></i>
+                    <span class="nav__logo-name">lapl4rt</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+
+                        <div class="nav__dropdown">
+                            <a class="nav__link" asp-controller="Pokedex" asp-action="Index">
+                                <i class='bx bx-aperture nav__icon'></i>
+                                <span class="nav__name">Покемоны</span>
+                            </a>
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bxs-backpack nav__icon'></i>
+                            <span class="nav__name">Инвентарь</span>
+                        </a>
+
+                        <a class="nav__link" asp-controller="Journal" asp-action="Index">
+                            <i class='bx bx-book nav__icon'></i>
+                            <span class="nav__name">История</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-atom nav__icon'></i>
+                            <span class="nav__name">Дуэли</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-football nav__icon'></i>
+                            <span class="nav__name">Стадионы</span>
+                        </a>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-film nav__icon'></i>
+                            <span class="nav__name">Кинотеатр</span>
+                        </a>
+                    </div>
+
+                    <!--    <div class="nav__items">
+            <h3 class="nav__subtitle">Menu</h3>
+
+            <div class="nav__dropdown">
+                <a href="#" class="nav__link">
+                    <i class='bx bx-bell nav__icon'></i>
+                    <span class="nav__name">Notifications</span>
+                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                </a>
+
+                <div class="nav__dropdown-collapse">
+                    <div class="nav__dropdown-content">
+                        <a href="#" class="nav__dropdown-item">Blocked</a>
+                        <a href="#" class="nav__dropdown-item">Silenced</a>
+                        <a href="#" class="nav__dropdown-item">Publish</a>
+                        <a href="#" class="nav__dropdown-item">Program</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="#" class="nav__link">
+                <i class='bx bx-compass nav__icon'></i>
+                <span class="nav__name">Explore</span>
+            </a>
+            <a href="#" class="nav__link">
+                <i class='bx bx-bookmark nav__icon'></i>
+                <span class="nav__name">Saved</span>
+            </a>
+        </div>-->
+                </div>
+            </div>
+
+            <a href="#" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - SIV_Pokemons_LL - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/assets/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

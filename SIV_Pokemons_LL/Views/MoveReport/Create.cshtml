@@ -1,0 +1,48 @@
+﻿@model SIV_Pokemons_LL.Models.Reports.MoveReport
+
+<h4>MoveReport</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CellFromId" class="control-label"></label>
+                <select asp-for="CellFromId" asp-items="@ViewBag.Cells" class="form-control" id="cellFrom">
+                    <option value="0">...</option>
+                </select>
+                <span asp-validation-for="CellFromId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CellToId" class="control-label"></label>
+                <select asp-for="CellToId" asp-items="@ViewBag.Cells" class="form-control" id="cellTo">
+                    <option value="0">...</option>
+                </select>
+                <span asp-validation-for="CellToId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThemeLevel" class="control-label"></label>
+                <input asp-for="ThemeLevel" class="form-control" />
+                <span asp-validation-for="ThemeLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookReport" class="control-label"></label>
+                <input asp-for="BookReport" class="form-control" />
+                <span asp-validation-for="BookReport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookForRead" class="control-label"></label>
+                <input asp-for="BookForRead" class="form-control" />
+                <span asp-validation-for="BookForRead" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

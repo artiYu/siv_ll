@@ -1,0 +1,66 @@
+﻿@model SIV_Pokemons_LL.Models.PokedexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Покедекс</h1>
+<div class="wrapper">
+    @foreach (var item in Model.PokedexActive)
+    {
+        var imgName = "/img/" + item.Pokemon.Name + ".jpg";
+
+        var tooltip = item.Pokemon.Name
+            + "\n["
+            + item.Pokemon.Type_1.Name + (item.Pokemon.Type_2.Id == 19 ? "" : "|" + item.Pokemon.Type_2.Name)
+            + "]\n"
+            + item.PokemonLevel + "(" + item.PokemonExp + ")";
+
+        <div class="box">
+            <div data-tooltip=@tooltip data-tooltip-location="center">
+                <a href="#">
+                    <img src=@imgName onerror="this.onerror=null; this.src='/img/default.png'" />
+                </a>
+            </div>
+        </div>
+    }
+    @for (int i = 0; i < 6 - Model.PokedexActive.Count; i++)
+    {
+        <div class="box grey_block">
+        </div>
+    }
+</div>
+<br />
+<h1>Коллекция</h1>
+
+<div class="div-table">
+    @foreach (var item in Model.PokemonsByEvolutions)
+    {
+
+        <div class="div-table-row">
+
+            @foreach (var pokedex in item.Value)
+            {
+
+                var imgName = "/img/" + pokedex.Pokemon.Name + ".jpg";
+                var tooltip = pokedex.Pokemon.Name
+                 + "\n["
+                 + pokedex.Pokemon.Type_1.Name + (pokedex.Pokemon.Type_2.Id == 19 ? "" : "|" + pokedex.Pokemon.Type_2.Name)
+                 + "]\n"
+                 + pokedex.PokemonLevel + "(" + pokedex.PokemonExp + ")";
+
+                <div class="div-table-col">
+                    <div data-tooltip=@tooltip data-tooltip-location="center">
+                        <div class="box-img">
+                            <a href="#">
+                                <img src=@imgName onerror="this.onerror=null; this.src='/img/default.png'" />
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+

@@ -1,0 +1,55 @@
+﻿@model SIV_Pokemons_LL.Models.Journal
+
+
+<div>
+    <h4>Journal</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TrainerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TrainerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CellFrom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CellFrom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CellTo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CellTo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Book)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Book)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PokemonId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PokemonId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EventId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EventId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Actions)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Actions)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

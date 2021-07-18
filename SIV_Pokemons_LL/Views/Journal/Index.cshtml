@@ -1,0 +1,47 @@
+﻿@model SIV_Pokemons_LL.Models.JournalViewModel
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Из
+            </th>
+            <th>
+                В
+            </th>
+            <th>
+                Книга
+            </th>
+            <th>
+                Покемон
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Journals)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CellFrom.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CellTo.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pokemon.Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

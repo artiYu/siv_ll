@@ -1,0 +1,57 @@
+﻿@model SIV_Pokemons_LL.Models.Reports.MoveReport
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+<div>
+    <h4>MoveReport</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CellFromId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CellFromId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CellToId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CellToId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThemeLevel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThemeLevel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Actions)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Actions)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Trainer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Trainer.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
+</html>
